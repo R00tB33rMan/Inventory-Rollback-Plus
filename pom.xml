@@ -158,7 +158,7 @@
                             <shadedPattern>${project.groupId}.paperlib</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>com.github.Anon8281.universalScheduler</pattern>
+                            <pattern>com.github.R00tB33rMan.universalScheduler</pattern>
                             <shadedPattern>${project.groupId}.universalScheduler</shadedPattern>
                         </relocation>
                     </relocations>
