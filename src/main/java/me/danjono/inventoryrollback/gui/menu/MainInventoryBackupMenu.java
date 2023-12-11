@@ -1,5 +1,6 @@
 package me.danjono.inventoryrollback.gui.menu;
 
+import com.github.R00tB33rMan.universalScheduler.UniversalRunnable;
 import com.nuclyon.technicallycoded.inventoryrollback.InventoryRollbackPlus;
 import me.danjono.inventoryrollback.config.ConfigData;
 import me.danjono.inventoryrollback.config.MessageData;
@@ -11,7 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -79,7 +79,7 @@ public class MainInventoryBackupMenu {
 		//If the backup file is invalid it will return null, we want to catch it here
 		try {
     		// Add items, 5 per tick
-			new BukkitRunnable() {
+			new UniversalRunnable() {
 
 				int invPosition = 0;
 				int itemPos = 0;
@@ -104,7 +104,7 @@ public class MainInventoryBackupMenu {
 						itemPos++;
 					}
 				}
-			}.runTaskTimer(main, 0, 1);
+			}.runTaskTimer(main, 1, 1);
 		} catch (NullPointerException e) {
 		    staff.sendMessage(MessageData.getPluginPrefix() + MessageData.getErrorInventory());
 		    return;
@@ -120,7 +120,7 @@ public class MainInventoryBackupMenu {
 					// Place item safely
 					final int finalPos = position;
 					final int finalItem = i;
-					Future<Void> placeItemFuture = main.getServer().getScheduler().callSyncMethod(main,
+					Future<Void> placeItemFuture = InventoryRollbackPlus.getScheduler().callSyncMethod(
 							() -> {
 								inventory.setItem(finalPos, armour[finalItem]);
 								return null;
@@ -138,7 +138,7 @@ public class MainInventoryBackupMenu {
 						// Place item safely
 						final int finalPos = position;
 						final int finalItem = item;
-						Future<Void> placeItemFuture = main.getServer().getScheduler().callSyncMethod(main,
+						Future<Void> placeItemFuture = InventoryRollbackPlus.getScheduler().callSyncMethod(
 								() -> {
 									inventory.setItem(finalPos, mainInventory[finalItem]);
 									return null;

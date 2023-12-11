@@ -32,7 +32,7 @@ public class ImportSubCmd extends IRPCommand {
                 suggestConfirm.set(true);
 
                 // Reset suggestion availability after 10 seconds
-                this.main.getServer().getScheduler().runTaskLaterAsynchronously(this.main, () -> {
+                InventoryRollbackPlus.getScheduler().runTaskLaterAsynchronously(() -> {
                     suggestConfirm.set(false);
                 }, 10 * 20);
 
@@ -40,7 +40,7 @@ public class ImportSubCmd extends IRPCommand {
             }
 
             // Execute import
-            Bukkit.getScheduler().runTaskAsynchronously(main, BackupConversionUtil::convertOldBackupData);
+            InventoryRollbackPlus.getScheduler().runTaskAsynchronously(BackupConversionUtil::convertOldBackupData);
 
             // Reset suggestion to not visible
             suggestConfirm.set(false);
@@ -49,7 +49,6 @@ public class ImportSubCmd extends IRPCommand {
         } else {
             sender.sendMessage(MessageData.getPluginPrefix() + MessageData.getNoPermission());
         }
-        return;
     }
 
     public static boolean shouldShowConfirmOption() {
