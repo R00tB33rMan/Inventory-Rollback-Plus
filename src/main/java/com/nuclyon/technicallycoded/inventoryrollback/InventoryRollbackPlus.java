@@ -1,7 +1,7 @@
 package com.nuclyon.technicallycoded.inventoryrollback;
 
-import com.github.R00tB33rMan.universalScheduler.UniversalScheduler;
-import com.github.R00tB33rMan.universalScheduler.scheduling.schedulers.TaskScheduler;
+import com.github.Anon8281.universalScheduler.UniversalScheduler;
+import com.github.Anon8281.universalScheduler.scheduling.schedulers.TaskScheduler;
 import com.nuclyon.technicallycoded.inventoryrollback.commands.Commands;
 import com.nuclyon.technicallycoded.inventoryrollback.UpdateChecker.UpdateResult;
 

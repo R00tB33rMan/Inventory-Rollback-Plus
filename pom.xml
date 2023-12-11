@@ -48,7 +48,7 @@
         </dependency>
         <!--Universal Scheduler-->
         <dependency>
-            <groupId>com.github.R00tB33rMan</groupId>
+            <groupId>com.github.Anon8281</groupId>
             <artifactId>UniversalScheduler</artifactId>
             <version>0.1.3</version>
             <scope>compile</scope>
@@ -158,7 +158,7 @@
                             <shadedPattern>${project.groupId}.paperlib</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>com.github.R00tB33rMan.universalScheduler</pattern>
+                            <pattern>com.github.Anon8281.universalScheduler</pattern>
                             <shadedPattern>${project.groupId}.universalScheduler</shadedPattern>
                         </relocation>
                     </relocations>

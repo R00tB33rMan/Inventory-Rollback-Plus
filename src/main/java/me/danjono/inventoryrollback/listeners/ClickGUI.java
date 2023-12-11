@@ -1,6 +1,6 @@
 package me.danjono.inventoryrollback.listeners;
 
-import com.github.R00tB33rMan.universalScheduler.UniversalRunnable;
+import com.github.Anon8281.universalScheduler.UniversalRunnable;
 import com.nuclyon.technicallycoded.inventoryrollback.InventoryRollbackPlus;
 import com.nuclyon.technicallycoded.inventoryrollback.nms.EnumNmsVersion;
 import io.papermc.lib.PaperLib;
